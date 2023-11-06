@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS hardwares(
     fkEmpresa INT NOT NULL,
 	fkFuncionario INT NOT NULL,
 	FOREIGN KEY (fkFuncionario) REFERENCES funcionarios(idFuncionario),
-    FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
-    PRIMARY KEY (idHardwares, fkEmpresa, fkFuncionario)
+    FOREIGN KEY (fkEmpresa) REFERENCES empresas(idEmpresa),
+    PRIMARY KEY (idHardware, fkEmpresa, fkFuncionario)
 );
 
 CREATE TABLE IF NOT EXISTS volateis(
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS volateis(
 	totalJanelas INT NOT NULL,
 	dataHora DATETIME,
 	fkHardware INT,
-	FOREIGN KEY (fkHardware) REFERENCES hardwares(id),
+	FOREIGN KEY (fkHardware) REFERENCES hardwares(idHardware),
 	PRIMARY KEY (idVolateis, fkHardware)
 );
 
@@ -64,15 +64,13 @@ CREATE TABLE IF NOT EXISTS limitador(
 );
 
 CREATE TABLE IF NOT EXISTS arquivos (
-	idArquivos INT PRIMARY KEY AUTO_INCREMENT,
+	idArquivos INT AUTO_INCREMENT,
 	nomeArquivo LONGTEXT NOT NULL,
 	tipoArquivo VARCHAR(100) NOT NULL,
 	tamanhoArquivo INT NOT NULL,
 	dadosArquivo LONGBLOB NOT NULL,
 	dataUpload TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	fkFuncionario INT NOT NULL,
-	FOREIGN KEY (fkfuncionario) REFERENCES funcionarios(idFuncionario),
-	PRIMARY KEY (id, fkFuncionario)
+	FOREIGN KEY (fkFuncionario) REFERENCES funcionarios(idFuncionario),
+	PRIMARY KEY (idArquivos, fkFuncionario)
 );
-
-select *  from limitador;
