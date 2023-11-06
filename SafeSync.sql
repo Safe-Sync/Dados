@@ -74,3 +74,5 @@ CREATE TABLE IF NOT EXISTS arquivos (
 	FOREIGN KEY (fkfuncionario) REFERENCES funcionarios(idFuncionario),
 	PRIMARY KEY (id, fkFuncionario)
 );
+
+select *  from limitador;
