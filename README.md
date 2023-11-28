@@ -6,7 +6,7 @@ Este repositório contém os scripts, modelos e documentação relacionados ao b
 
 ## Conteúdo
 
-- Scripts mySQL e SQL para criação e manutenção do banco de dados
+- Scripts mySQL e SQL Server para criação e manutenção do banco de dados
 - Modelos de dados e diagramas de entidade-relacionamento (DER)
 
 ## Acesso ao Banco de Dados
